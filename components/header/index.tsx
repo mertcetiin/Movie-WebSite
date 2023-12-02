@@ -1,9 +1,15 @@
+"use client";
 import Link from 'next/link';
 import React from 'react'
 import { FaPlay } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
+import { useState } from 'react';
 
 function Header() {
+
+    const [inputCustom, setInputCustom] = useState(false);
+
     return (
         <header className="text-gray-600 body-font">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -12,6 +18,13 @@ function Header() {
                     <button className="ml-3 text-xl">Movies</button>
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+
+
+                    {/* <button onClick={() => setInputCustom(!inputCustom)} className='mr-5'> */}
+
+                    {`${inputCustom ? (<button onClick={() => setInputCustom(!inputCustom)} className='mr-5'><FaSearch /></button>) : (<input className='mr-6 px-2 py-1 w-22 rounded-xl outline-none bg-gray-700 text-white' type="search" placeholder="Search..." />)}`}
+                    {/* </button> */}
+
                     <Link href='/' className="mr-5 text-white hover:text-gray-400">Movies</Link>
                     <Link href='/' className="mr-5 text-white hover:text-gray-400">Series</Link>
                 </nav>

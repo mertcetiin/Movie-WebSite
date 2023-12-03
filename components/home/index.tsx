@@ -1,9 +1,12 @@
 import React from 'react'
+import GenresIndex from '../genres';
 
 function HomePage() {
     return (
-        <div>HomePage</div>
+        <div>
+            <GenresIndex />
+        </div>
     )
 }
 
-export default HomePage
+export default HomePage;

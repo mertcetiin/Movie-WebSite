@@ -8,7 +8,7 @@ export const Genres: GenresType[] = ([
     {
         id: 1,
         name: 'Action',
-        linkGenres: '',
+        linkGenres: '/action',
     },
     {
         id: 2,

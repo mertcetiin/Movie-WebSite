@@ -34,7 +34,7 @@ function Header() {
                     <Link href='/movies' className="mr-5 text-white hover:text-gray-400">Movies</Link>
                     <Link href='/series' className="mr-5 text-white hover:text-gray-400">Series</Link>
                 </nav>
-                <Link href='/login' className="inline-flex items-center text-white  border-0 py-1 px-2 focus:outline-none hover:text-gray-400 rounded text-base mt-4 md:mt-0">
+                <Link href='/login' className="mr-5 inline-flex items-center text-white focus:outline-none hover:text-gray-400 rounded text-base mt-4 md:mt-0">
                     <IoPersonSharp />
                 </Link>
             </div>

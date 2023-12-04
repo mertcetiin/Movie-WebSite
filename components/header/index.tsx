@@ -26,7 +26,7 @@ function Header() {
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     {inputCustom ?
                         <div className='flex items-center'>
-                            <input className='mr-4 px-2 py-1 w-22 rounded-xl outline-none bg-gray-700 text-white' type="search" placeholder="Search..." />
+                            <input className='mr-4 px-2 py-1 h-7 w-18 rounded-xl outline-none bg-gray-700 text-white' type="search" />
                             <button onClick={() => setInputCustom(!inputCustom)} className='mr-5'><FaSearch /></button>
                         </div>
                         : <button className='mr-5' onClick={() => setInputCustom(!inputCustom)}><FaSearch /></button>}
@@ -34,9 +34,9 @@ function Header() {
                     <Link href='/movies' className="mr-5 text-white hover:text-gray-400">Movies</Link>
                     <Link href='/series' className="mr-5 text-white hover:text-gray-400">Series</Link>
                 </nav>
-                <button className="inline-flex items-center text-white bg-gray-700 border-0 py-1 px-3 focus:outline-none hover:bg-gray-800 rounded text-base mt-4 md:mt-0">
+                <Link href='/login' className="inline-flex items-center text-white  border-0 py-1 px-2 focus:outline-none hover:text-gray-400 rounded text-base mt-4 md:mt-0">
                     <IoPersonSharp />
-                </button>
+                </Link>
             </div>
         </header>
     )

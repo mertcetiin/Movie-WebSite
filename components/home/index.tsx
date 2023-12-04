@@ -1,6 +1,6 @@
 import React from 'react'
 import GenresIndex from '../genres';
-import MoviesIndex from '../moviesSection-1';
+import MoviesIndex from '../movies';
 
 function HomePage() {
     return (

@@ -8,10 +8,14 @@ interface MovieState {
     genresState: GenresType[];
     moviesState: MoviesType[];
     actionState: ActionType[];
+    movieId: number | null;
 }
 
 export const useMovieStore = create<MovieState>()((set) => ({
     genresState: Genres,
     moviesState: Movies,
     actionState: Action,
+    movieId: null,
+
+    setMovieId: (id: number) => set({ movieId: id }),
 }))

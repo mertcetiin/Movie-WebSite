@@ -3,6 +3,7 @@ import GenresIndex from '../genres';
 import MoviesIndex from '../movies';
 
 function HomePage() {
+
     return (
         <div>
             <GenresIndex />

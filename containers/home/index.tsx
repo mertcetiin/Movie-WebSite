@@ -1,12 +1,12 @@
 "use client"
+import GenresIndex from '@/components/genres';
+import LoadingIndex from '@/components/loading';
+import MoviesIndex from '@/components/movies';
 import React from 'react'
-import GenresIndex from '../genres';
-import MoviesIndex from '../movies';
-import LoadingIndex from '../loading';
 import { useEffect, useState } from 'react';
 
+function HomeIndex() {
 
-function HomePage() {
     const [showLoading, setShowLoading] = useState(true);
 
     useEffect(() => {
@@ -29,4 +29,4 @@ function HomePage() {
     )
 }
 
-export default HomePage;
+export default HomeIndex;

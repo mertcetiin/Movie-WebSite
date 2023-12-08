@@ -1,10 +1,10 @@
-import HomePage from "@/components/home";
+import HomeIndex from "@/containers/home";
 
 
 export default function Home() {
   return (
     <div>
-      <HomePage />
+      <HomeIndex />
     </div>
   )
 }

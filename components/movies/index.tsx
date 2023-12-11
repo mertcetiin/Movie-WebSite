@@ -18,22 +18,11 @@ function MoviesIndex() {
     const popularMovies = moviesState.slice(4, 8)
     const mostMovies = moviesState.slice(8, 12)
 
-    // const [imbd, setImdb]: any = useState({})
-
-    // const apiKey = 'dc694d9a00c5c7954f9d9653af8460f9';
-    // const popular = 'https://www.themoviedb.org/movie/';
-
-    // useEffect(() => {
-    //     fetch(`${popular}?api_key=${apiKey}`)
-    //         .then((res) => res.json())
-    //         .then((data) => setImdb(data))
-    //         .catch((error) => console.error('Error fetching data:', error));
-    // }, [])
-
 
     interface Movie {
         id: number;
         title: string;
+        backdrop_path: string;
     }
 
 
@@ -62,12 +51,11 @@ function MoviesIndex() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {trendingMovies.map((item) => (
                         <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                            <img className="w-full h-48 object-cover" alt={item.title} />
+                            <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
                         </button>
                     ))}
                 </div>
             </div>
-
 
 
             {/* <div className="mt-24 ml-16 mr-16 cursor-pointer">

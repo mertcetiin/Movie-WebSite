@@ -28,12 +28,17 @@ function MoviesIndex() {
 
     const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
 
+
+    require('dotenv').config();
     useEffect(() => {
+
+        const apiKey = process.env.REACT_APP_API_KEY;
+
         const options = {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYzY5NGQ5YTAwYzVjNzk1NGY5ZDk2NTNhZjg0NjBmOSIsInN1YiI6IjY1NzQ2MjkwYmJlMWRkMDExYjhmN2I2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VR_xxW-D5oz4B8m938pXy2I3lF3jEEEdGxKqBBglv4E'
+                Authorization: apiKey ? `Bearer ${apiKey}` : '',
             }
         };
 
@@ -58,29 +63,8 @@ function MoviesIndex() {
             </div>
 
 
-            {/* <div className="mt-24 ml-16 mr-16 cursor-pointer">
-                <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">Favori Movies</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    <p>{imbd.original_title}</p>
-                    <p>{imbd.title}</p>
-                    <button onClick={() => handleRouter(imbd.imdb_id)} key={imbd.imdb_id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                        <img className="w-full h-48 object-cover" src={`https://image.tmdb.org/t/p/w500${imbd.backdrop_path}`} alt={imbd.title} />
-                    </button>
-                </div>
-            </div> */}
 
-
-            {/* <div className="mt-24 ml-16 mr-16 cursor-pointer">
-                <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">Favori Movies</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {favoriteMovies.map((item) => (
-                        <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                            <img className="w-full h-48 object-cover" src={item.imgPath} alt={item.title} />
-                        </button>
-                    ))}
-                </div>
-            </div>
-            <div className="mt-20 ml-16 mr-16 cursor-pointer">
+            {/* <div className="mt-20 ml-16 mr-16 cursor-pointer">
                 <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">Popular Movies</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {popularMovies.map((item) => (

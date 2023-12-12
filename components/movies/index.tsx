@@ -1,12 +1,12 @@
 "use client";
 import { useMovieStore } from '@/state/store';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 function MoviesIndex() {
 
-    const moviesState = useMovieStore((state) => state.moviesState)
+
     const router = useRouter();
 
     const handleRouter = (id: number) => {
@@ -14,20 +14,13 @@ function MoviesIndex() {
         router.push(`/movieDetail/${id}`)
     }
 
-    const favoriteMovies = moviesState.slice(0, 4)
-    const popularMovies = moviesState.slice(4, 8)
-    const mostMovies = moviesState.slice(8, 12)
+    // const favoriteMovies = moviesState.slice(0, 4)
+    // const popularMovies = moviesState.slice(4, 8)
+    // const mostMovies = moviesState.slice(8, 12)
 
 
-    interface Movie {
-        id: number;
-        title: string;
-        backdrop_path: string;
-    }
-
-
-    const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
-
+    const trendingMovies = useMovieStore((state) => state.trendingMovies)
+    const setTrendingMovies = useMovieStore((state) => state.setTrendingMovies)
 
     require('dotenv').config();
     useEffect(() => {

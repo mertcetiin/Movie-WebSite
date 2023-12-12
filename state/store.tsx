@@ -1,19 +1,29 @@
 import { Action, ActionType } from "@/data/action";
 import { GenresType, Genres } from "@/data/genres"
-import { Movies, MoviesType } from "@/data/movies";
 import { create } from "zustand"
 
 
-interface MovieState {
-    genresState: GenresType[];
-    moviesState: MoviesType[];
-    actionState: ActionType[];
-    movieId: number | null;
+interface Movie {
+    id: number;
+    title: string;
+    backdrop_path: string;
+    overview: string;
+    poster_path: string;
 }
 
-export const useMovieStore = create<MovieState>()((set) => ({
+interface MovieStore {
+    trendingMovies: Movie[];
+    setTrendingMovies: (movies: Movie[]) => void;
+    genresState: GenresType[];
+    actionState: ActionType[];
+    movieId: number | null;
+
+}
+
+export const useMovieStore = create<MovieStore>()((set) => ({
     genresState: Genres,
-    moviesState: Movies,
+    trendingMovies: [],
+    setTrendingMovies: (movies) => set({ trendingMovies: movies }),
     actionState: Action,
     movieId: null,
 

@@ -4,17 +4,15 @@ import FavoriIndex from '../favoriMovies';
 
 function MoviesIndex() {
 
-
     // const favoriteMovies = trendingMovies.slice(0, 4)
     // const popularMovies = moviesState.slice(4, 8)
     // const mostMovies = moviesState.slice(8, 12)
 
 
-
     return (
         <>
 
-            <FavoriIndex />
+            <FavoriIndex label={'Favori Movies'} />
 
             {/* <div className="mt-20 ml-16 mr-16 cursor-pointer">
                 <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">Popular Movies</h2>

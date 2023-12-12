@@ -17,7 +17,6 @@ interface MovieStore {
     genresState: GenresType[];
     actionState: ActionType[];
     movieId: number | null;
-
 }
 
 export const useMovieStore = create<MovieStore>()((set) => ({

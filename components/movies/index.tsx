@@ -8,7 +8,6 @@ function MoviesIndex() {
     // const popularMovies = moviesState.slice(4, 8)
     // const mostMovies = moviesState.slice(8, 12)
 
-
     return (
         <>
 

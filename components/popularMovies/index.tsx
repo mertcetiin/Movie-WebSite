@@ -44,6 +44,9 @@ function PopularIndex({ label }: any) {
                 {popularMovies.map((item) => (
                     <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
                         <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
+                        <div className="absolute bottom-0 p-4 w-full flex flex-col justify-end bg-gradient-to-t from-transparent to-black opacity-0 hover:opacity-100 transition-opacity">
+                            <div className="text-white text-xs italic">{`${item.overview.slice(0, 106)}...`}</div>
+                        </div>
                     </button>
                 ))}
             </div>

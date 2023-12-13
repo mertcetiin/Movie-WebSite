@@ -39,7 +39,7 @@ function MovieDetail() {
                                     <span className="text-gray-600 ml-3">4 Reviews</span>
                                 </span>
                             </div>
-                            <p className="leading-relaxed">{selectedMovie.overview}</p>
+                            <p className="leading-relaxed text-gray-400">{selectedMovie.overview}</p>
                             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                             </div>
                             <div className="flex">

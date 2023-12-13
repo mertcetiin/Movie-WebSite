@@ -2,6 +2,7 @@
 import { useMovieStore } from '@/state/store';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+require('dotenv').config();
 
 function FavoriIndex({ label }: any) {
 
@@ -18,7 +19,6 @@ function FavoriIndex({ label }: any) {
 
     const favoriteMovies = trendingMovies.slice(0, 4)
 
-    require('dotenv').config();
     useEffect(() => {
 
         const apiKey = process.env.NEXT_PUBLIC_REACT_APP_API_KEY;

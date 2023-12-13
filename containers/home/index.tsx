@@ -1,7 +1,7 @@
 "use client"
 import GenresIndex from '@/components/genres';
 import LoadingIndex from '@/components/loading';
-import MoviesIndex from '@/components/movies';
+import MovieIndex from '../movie';
 import React from 'react'
 import { useEffect, useState } from 'react';
 
@@ -22,7 +22,7 @@ function HomeIndex() {
             {!showLoading && (
                 <div>
                     <GenresIndex />
-                    <MoviesIndex />
+                    <MovieIndex />
                 </div>
             )}
         </div>

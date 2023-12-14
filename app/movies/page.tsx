@@ -10,7 +10,7 @@ function MoviesPage() {
     const setTrendingMovies = useMovieStore((state) => state.setTrendingMovies)
 
     const router = useRouter();
-
+    // Navigates to the movie detail page with the specified movie ID
     const handleRouter = (id: number) => {
         useMovieStore.setState({ movieId: id })
         router.push(`/movieDetail/${id}`)
@@ -36,22 +36,8 @@ function MoviesPage() {
     }, []);
 
     return (
-        // <div className="flex flex-wrap gap-4 ml-10 mr-10">
-        //     {trendingMovies.map((item) => (
-        //         <div key={item.id} className="relative overflow-hidden transition-transform border border-gray-500 hover:transform hover:scale-110 hover:z-10 flex-grow">
-        //             <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
-        //             <button onClick={() => handleRouter(item.id)}>
-        //                 <div className="absolute bottom-0 p-4 w-full flex flex-col justify-end bg-gradient-to-t from-transparent to-black opacity-0 hover:opacity-100 transition-opacity">
-        //                     <div className="text-white font-bold mb-2">{item.title}</div>
-        //                     <div className="text-white text-xs italic">{`${item.overview.slice(0, 106)}...`}</div>
-        //                 </div>
-        //             </button>
-        //         </div>
-        //     ))}
-        // </div>
-
-        <div className="mt-14 ml-16 mr-16 cursor-pointer">
-            <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">Movies</h2>
+        <div className="mt-14 mx-6 cursor-pointer">
+            <h2 className="mb-4 text-uppercase text-2xl font-semibold uppercase tracking-wide">Movies</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {trendingMovies.map((item) => (
                     <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">

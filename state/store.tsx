@@ -8,6 +8,7 @@ interface Movie {
     backdrop_path: string;
     overview: string;
     poster_path: string;
+    original_name: string;
 }
 
 interface GenresType {

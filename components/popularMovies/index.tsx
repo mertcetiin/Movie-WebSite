@@ -42,7 +42,7 @@ function PopularIndex({ label }: any) {
 
     return (
         <div className="mt-20 ml-16 mr-16 cursor-pointer">
-            <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">{`${filterState.length < 0 ? '' : 'Popular Movies'}`}</h2>
+            <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">{`${filterState.length > 0 ? '' : 'Popular Movies'}`}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filterState.length > 0 ? (
                     filterSlice.map((item) => (

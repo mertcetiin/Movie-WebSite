@@ -23,10 +23,14 @@ function Header() {
 
     const handleFilter = (e: any) => {
         const filterValue = e.target.value.toLowerCase();
-        const updateFilter = trendingMovies.filter((item) =>
-            item.title.toLowerCase().includes(filterValue)
-        );
-        setFilterState(updateFilter);
+        if (filterValue.length > 0) {
+            const updateFilter = trendingMovies.filter((item) =>
+                item.title.toLowerCase().includes(filterValue)
+            );
+            setFilterState(updateFilter);
+        } else {
+            setFilterState([]);
+        }
     };
 
 

@@ -6,6 +6,7 @@ import { IoPersonSharp } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useMovieStore } from '@/state/store';
 
 function Header() {
 
@@ -15,6 +16,19 @@ function Header() {
     const handleRouter = () => {
         router.push('/')
     }
+
+    const trendingMovies = useMovieStore((state) => state.trendingMovies);
+    const filterState = useMovieStore((state) => state.filterState);
+    const setFilterState = useMovieStore((state) => state.setFilterState);
+
+    const handleFilter = (e: any) => {
+        const filterValue = e.target.value.toLowerCase();
+        const updateFilter = trendingMovies.filter((item) =>
+            item.title.toLowerCase().includes(filterValue)
+        );
+        setFilterState(updateFilter);
+    };
+
 
     return (
         <header className="text-gray-600 body-font">
@@ -26,8 +40,12 @@ function Header() {
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     {inputCustom ?
                         <div className='flex items-center'>
-                            <input className='mr-4 px-2 py-1 h-7 w-18 rounded-xl outline-none bg-gray-700 text-white' type="search" />
-                            <button onClick={() => setInputCustom(!inputCustom)} className='mr-5'><FaSearch /></button>
+                            <input onChange={handleFilter} className='mr-4 px-2 py-1 h-7 w-18 rounded-xl outline-none bg-gray-700 text-white' type="search" />
+                            <button onClick={() => {
+                                setInputCustom(!inputCustom);
+
+                            }} className='mr-5'><FaSearch />
+                            </button>
                         </div>
                         : <button className='mr-5' onClick={() => setInputCustom(!inputCustom)}><FaSearch /></button>}
 

@@ -37,18 +37,33 @@ function FavoriIndex({ label }: any) {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    const filterState = useMovieStore((state) => state.filterState);
+
+    const filterSlice = filterState.slice(0, 4)
+
     return (
         <div className="mt-20 ml-16 mr-16 cursor-pointer">
-            <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">{label}</h2>
+            <h2 className="mb-4 text-uppercase text-2xl font-semibold tracking-wider">{`${filterState.length > 0 ? '' : 'Favori Movies'}`}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {favoriteMovies.map((item) => (
-                    <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                        <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
-                        <div className="absolute bottom-0 p-4 w-full flex flex-col justify-end bg-gradient-to-t from-transparent to-black opacity-0 hover:opacity-100 transition-opacity">
-                            <div className="text-white text-xs italic">{`${item.overview.slice(0, 106)}...`}</div>
-                        </div>
-                    </button>
-                ))}
+                {filterState.length > 0 ? (
+                    filterSlice.map((item) => (
+                        <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                            <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
+                            <div className="absolute bottom-0 p-4 w-full flex flex-col justify-end bg-gradient-to-t from-transparent to-black opacity-0 hover:opacity-100 transition-opacity">
+                                <div className="text-white text-xs italic">{`${item.overview.slice(0, 106)}...`}</div>
+                            </div>
+                        </button>
+                    ))
+                ) : (
+                    favoriteMovies.map((item) => (
+                        <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                            <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
+                            <div className="absolute bottom-0 p-4 w-full flex flex-col justify-end bg-gradient-to-t from-transparent to-black opacity-0 hover:opacity-100 transition-opacity">
+                                <div className="text-white text-xs italic">{`${item.overview.slice(0, 106)}...`}</div>
+                            </div>
+                        </button>
+                    ))
+                )}
             </div>
         </div>
 

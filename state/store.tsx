@@ -24,6 +24,9 @@ interface MovieStore {
 
     actionState: ActionType[];
     movieId: number | null;
+
+    filterState: Movie[];
+    setFilterState: (filterState: Movie[]) => void;
 }
 
 export const useMovieStore = create<MovieStore>()((set) => ({
@@ -37,4 +40,7 @@ export const useMovieStore = create<MovieStore>()((set) => ({
     movieId: null,
 
     setMovieId: (id: number) => set({ movieId: id }),
+
+    filterState: [],
+    setFilterState: (filterState) => set({ filterState }),
 }))

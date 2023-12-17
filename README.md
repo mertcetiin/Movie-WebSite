@@ -31,4 +31,5 @@ Movie is a web application developed using Next.js, providing users with the opp
    npx create-next-app@latest
    npm install zustand
    npm install react-icons --save
+   npm i dotenv
    npm run dev

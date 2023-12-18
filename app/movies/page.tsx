@@ -39,9 +39,9 @@ function MoviesPage() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
+        setTimeout(() => {
             setIsLoading(false)
-        }, 1000)
+        }, 500)
     }, [])
 
     const trendingMovies = useMovieStore((state) => state.trendingMovies)
@@ -54,7 +54,7 @@ function MoviesPage() {
 
             {!isLoading && (
                 <div className="mt-14 mx-14 cursor-pointer">
-                    <h2 className="mb-6 text-uppercase text-2xl font-semibold uppercase tracking-wide text-white p-2 rounded">Movies</h2>
+                    <h2 className="mb-4 text-uppercase text-2xl font-semibold uppercase tracking-wide text-white p-2 bg-gray-900 rounded">Movies</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {filterState.length > 0 ? (
                             filterState.map((item) => (

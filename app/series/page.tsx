@@ -2,6 +2,8 @@
 import { useMovieStore } from "@/state/store";
 import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import LoadingIndex from "@/components/loading";
 
 function Seriespage() {
 
@@ -35,26 +37,42 @@ function Seriespage() {
 
     const filterState = useMovieStore((state) => state.filterState);
 
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 500)
+    }, [])
+
     return (
-        <div className="mt-14 mx-6 cursor-pointer">
-            <h2 className="mb-4 text-uppercase text-2xl font-semibold uppercase tracking-wide text-white bg-gray-900 p-2 rounded">Series</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {filterState.length > 0 ? (
-                    filterState.map((item) => (
-                        <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                            <p className="text-white text-sm bg-transparent p-1">{item.original_name}</p>
-                            <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.original_name} />
-                        </button>
-                    ))
-                ) : (
-                    trendingMovies.map((item) => (
-                        <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
-                            <p className="text-white text-sm bg-transparent p-1">{item.original_name}</p>
-                            <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.original_name} />
-                        </button>
-                    ))
-                )}
-            </div>
+        <div>
+            {isLoading && <LoadingIndex />}
+
+            {!isLoading && (
+                <div className="mt-14 mx-6 cursor-pointer">
+                    <h2 className="mb-4 text-uppercase text-2xl font-semibold uppercase tracking-wide text-white bg-gray-900 p-2 rounded">Series</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filterState.length > 0 ? (
+                            filterState.map((item) => (
+                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                                    <p className="text-white text-sm bg-transparent p-1">{item.original_name}</p>
+                                    <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.original_name} />
+                                </button>
+                            ))
+                        ) : (
+                            trendingMovies.map((item) => (
+                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                                    <p className="text-white text-sm bg-transparent p-1">{item.original_name}</p>
+                                    <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.original_name} />
+                                </button>
+                            ))
+                        )}
+                    </div>
+                </div>
+
+            )}
         </div>
     )
 }

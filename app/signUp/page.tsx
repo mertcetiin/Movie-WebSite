@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SignUpPage() {
+function signup() {
     return (
         <div className="relative mt-36 mb-32 mx-auto w-full max-w-md bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:rounded-xl sm:px-10" >
             <div className="w-full">
@@ -41,4 +41,4 @@ function SignUpPage() {
     )
 }
 
-export default SignUpPage;
+export default signup

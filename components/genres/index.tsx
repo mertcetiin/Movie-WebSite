@@ -23,7 +23,7 @@ function GenresIndex() {
             }
         };
 
-        fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
+        fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
             .then(res => res.json())
             .then(data => setGenresMovies(data.genres))
             .catch(error => console.error('Error fetching data:', error));

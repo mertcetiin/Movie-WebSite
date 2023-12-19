@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { signUpSchema } from '@/schemas';
 import { useRouter } from 'next/navigation';
 
-function signup() {
+function Signup() {
 
     const router = useRouter();
 
@@ -94,4 +94,4 @@ function signup() {
     )
 }
 
-export default signup
+export default Signup;

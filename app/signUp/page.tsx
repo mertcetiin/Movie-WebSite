@@ -31,7 +31,7 @@ function Signup() {
             <div className="w-full">
                 <div className="text-center">
                     <h1 className="text-3xl font-semibold text-gray-900">Sign up</h1>
-                    <p className="mt-2 text-gray-500">Don't have an account?</p>
+                    <p className="mt-2 text-gray-500">Don&apos;t have an account?</p>
                 </div>
                 <div className="mt-5">
                     <form onSubmit={handleSubmit} action="">

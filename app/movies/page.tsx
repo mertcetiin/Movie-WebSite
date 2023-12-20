@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import LoadingIndex from "@/components/loading";
+import { string } from "yup";
 
 
 function MoviesPage() {
@@ -58,14 +59,14 @@ function MoviesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {filterState.length > 0 ? (
                             filterState.map((item) => (
-                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform">
                                     <p className="text-white text-sm bg-transparent p-1">{item.title}</p>
                                     <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
                                 </button>
                             ))
                         ) : (
                             trendingMovies.map((item) => (
-                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform hover:scale-125 hover:z-10">
+                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform">
                                     <p className="text-white text-sm bg-transparent p-1">{item.title}</p>
                                     <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
                                 </button>
@@ -76,6 +77,7 @@ function MoviesPage() {
             )}
         </div>
     )
+
 }
 
 export default MoviesPage;

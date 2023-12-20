@@ -1,5 +1,6 @@
 "use client"
 import { useMovieStore } from '@/state/store'
+import { notFound } from 'next/navigation';
 import React from 'react'
 
 function MovieDetail() {
@@ -8,7 +9,9 @@ function MovieDetail() {
     const movieId = useMovieStore((state) => state.movieId);
     const selectedMovie = trendingMovies.find((item) => item.id === movieId);
 
-
+    if (!selectedMovie) {
+        notFound();
+    }
 
     return (
         <section className="text-gray-600 body-font overflow-hidden">

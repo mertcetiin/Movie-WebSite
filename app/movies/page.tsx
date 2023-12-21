@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import LoadingIndex from "@/components/loading";
-import { string } from "yup";
 
 
 function MoviesPage() {
@@ -54,24 +53,38 @@ function MoviesPage() {
             {isLoading && <LoadingIndex />}
 
             {!isLoading && (
-                <div className="mt-14 mx-14 cursor-pointer">
-                    <h2 className="mb-4 text-uppercase text-2xl font-semibold uppercase tracking-wide text-white p-2 bg-gray-900 rounded">Movies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="min-h-screen mt-8 bg-black flex items-center justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-8">
                         {filterState.length > 0 ? (
                             filterState.map((item) => (
-                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform">
-                                    <p className="text-white text-sm bg-transparent p-1">{item.title}</p>
-                                    <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
-                                </button>
+                                <div onClick={() => handleRouter(item.id)} key={item.id} className="flex flex-col gap-2 w-full h-full">
+                                    <a href="">
+                                        <img src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} className="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100 w-full rounded-md" />
+                                    </a>
+                                    <a href={`/movieDetail/${item.id}`} className="hover:text-gray-500 text-gray-200 font-semibold text-lg"> {item.title} </a>
+                                    <a href="#" className="hover:text-gray-500 text-sm text-gray-400"> {item.vote_average} IMDB </a>
+                                    <div className="flex flex-row flex-wrap gap-2">
+                                        <a href="#" className="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> {item.original_language} </a>
+                                        <a href="#" className="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> {item.popularity} </a>
+                                    </div>
+                                </div>
                             ))
                         ) : (
                             trendingMovies.map((item) => (
-                                <button onClick={() => handleRouter(item.id)} key={item.id} className="overflow-hidden border rounded-lg relative shadow-md transition-transform duration-300 transform">
-                                    <p className="text-white text-sm bg-transparent p-1">{item.title}</p>
-                                    <img className="w-full h-48 object-cover" src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} alt={item.title} />
-                                </button>
+                                <div onClick={() => handleRouter(item.id)} key={item.id} className="flex flex-col gap-2 w-full h-full">
+                                    <a href="">
+                                        <img src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} className="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100 w-full rounded-md" />
+                                    </a>
+                                    <a href={`/movieDetail/${item.id}`} className="hover:text-gray-500 text-gray-200 font-semibold text-lg"> {item.title} </a>
+                                    <a href="#" className="hover:text-gray-500 text-sm text-gray-400"> {item.vote_average} IMDB </a>
+                                    <div className="flex flex-row flex-wrap gap-2">
+                                        <a href="#" className="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> {item.original_language} </a>
+                                        <a href="#" className="hover:bg-gray-600 text-gray-300 text-xs font-semibold bg-gray-700 px-2 py-1 rounded-full"> {item.popularity} </a>
+                                    </div>
+                                </div>
                             ))
                         )}
+
                     </div>
                 </div>
             )}

@@ -9,6 +9,9 @@ interface Movie {
     overview: string;
     poster_path: string;
     original_name: string;
+    vote_average: number;
+    popularity: number;
+    original_language: string;
 }
 
 interface GenresType {

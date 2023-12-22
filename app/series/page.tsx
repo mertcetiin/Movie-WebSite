@@ -53,6 +53,7 @@ function Seriespage() {
             {!isLoading && (
                 <div className="min-h-screen mt-8 bg-black flex items-center justify-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-8">
+                        <h1 className="col-span-full text-left text-2xl font-bold text-white mb-4">Series</h1>
                         {filterState.length > 0 ? (
                             filterState.map((item) => (
                                 <div onClick={() => handleRouter(item.id)} key={item.id} className="flex flex-col gap-2 w-full h-full cursor-pointer">

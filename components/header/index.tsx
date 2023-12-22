@@ -39,7 +39,7 @@ function Header() {
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                     <FaPlay />
-                    <button onClick={handleRouter} className="ml-3 text-xl hover:text-gray-400">Movies</button>
+                    <button onClick={handleRouter} className="ml-3 text-xl hover:text-gray-400">Movies Play</button>
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     {inputCustom ?

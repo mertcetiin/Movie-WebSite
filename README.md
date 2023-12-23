@@ -1,4 +1,4 @@
-# Next.js + TypeScript + Zustand
+![image](https://github.com/mertcetiin/Movie-WebSite/assets/102957602/d31b8ce8-0cbc-45ff-9bcf-da4c03b4c612)# Next.js + TypeScript + Zustand
 
 # Movie
 
@@ -8,7 +8,7 @@ Movie is a web application developed using Next.js, providing users with the opp
 
 ![image]()
 
-![image]()
+![image](https://github.com/mertcetiin/Movie-WebSite/assets/102957602/da978d3b-849b-4aa8-856c-c49e4694bbb8)
 
 
 ## Project Link

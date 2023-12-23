@@ -1,4 +1,4 @@
-![image](https://github.com/mertcetiin/Movie-WebSite/assets/102957602/d31b8ce8-0cbc-45ff-9bcf-da4c03b4c612)# Next.js + TypeScript + Zustand
+# Next.js + TypeScript + Zustand
 
 # Movie
 

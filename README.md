@@ -2,13 +2,13 @@
 
 # Movie
 
-Movie is a web application developed using Next.js, providing users with the opportunity to discover and review film information. This application accesses an extensive film database using an API. Users can explore films in different categories, examine film details, and save their favorite movies using MovieHub.
+Movie is a web application developed using Next.js, providing users with the opportunity to discover and review film information. This application accesses an extensive film database using an API. Users can explore films in different categories, examine film details MoviePlay.
 
 ## Project Screenshot
 
 ![image]()
 
-![image]()
+![image](https://github.com/mertcetiin/Movie-WebSite/assets/102957602/da978d3b-849b-4aa8-856c-c49e4694bbb8)
 
 
 ## Project Link

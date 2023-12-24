@@ -58,7 +58,7 @@ function MoviesPage() {
                         {filterState.length > 0 ? (
                             filterState.map((item) => (
                                 <div onClick={() => handleRouter(item.id)} key={item.id} className="flex flex-col gap-2 w-full h-full cursor-pointer">
-                                    <img src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} className="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100 w-full rounded-md" />
+                                    <img src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} className="hover:translate-x- hover:-translate-y-1 delay-50 duration-100 w-full rounded-md" />
                                     <a className="hover:text-gray-500 text-gray-200 font-semibold text-lg truncate">
                                         {item.title}
                                     </a>
@@ -71,7 +71,6 @@ function MoviesPage() {
                             ))
                         ) : (
                             trendingMovies.map((item) => (
-
                                 <div onClick={() => handleRouter(item.id)} key={item.id} className="flex flex-col gap-2 w-full h-full cursor-pointer">
                                     <img src={`https://www.themoviedb.org/t/p/w500_and_h282_face${item.backdrop_path}`} className="hover:translate-x-1 hover:-translate-y-1 delay-50 duration-100 w-full rounded-md" />
                                     <a className="hover:text-gray-500 text-gray-200 font-semibold text-lg truncate">

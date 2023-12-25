@@ -21,7 +21,7 @@ function HomeIndex() {
 
             {!showLoading && (
                 <div>
-                    <GenresIndex />
+                    {/* <GenresIndex /> */}
                     <MovieIndex />
                 </div>
             )}

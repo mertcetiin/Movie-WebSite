@@ -6,8 +6,6 @@ Movie is a web application developed using Next.js, providing users with the opp
 
 ## Project Screenshot
 
-![image]()
-
 ![image](https://github.com/mertcetiin/Movie-WebSite/assets/102957602/da978d3b-849b-4aa8-856c-c49e4694bbb8)
 
 
